@@ -23,7 +23,7 @@ Gather from user:
 
 | 维度 | 数据 |
 |:----|:------|
-| 💰 主流售价 | $[价格范围]（按规格分档列出） |
+| 💰 主流售价 | $[价格范围]（按规格分档列出，需≥$50） |
 | 📊 市场规模 | $[市场规模]（[年份]），预计[年份]$[预测规模]，CAGR [增长率] |
 | 🏆 头部竞品 | [品牌1] $[价格] / [品牌2] $[价格] / [品牌3] $[价格] |
 | 📦 月销参考 | TOP ASIN [月销范围] |
@@ -74,7 +74,7 @@ Provide profit calculations for **at least 2 specifications/configurations** —
 | 海外仓操作 | -¥[CNY] ≈ -$[USD] |
 | FBM尾程 | -$[amount] |
 | **单台净利润** | **≈ $[amount]** |
-| **净利率** | **≈ [percentage]%** |
+| **净利率** | **≈ [percentage]%**（需≥28%） |
 ```
 
 ### 4. Decision Summary
@@ -84,13 +84,13 @@ Provide profit calculations for **at least 2 specifications/configurations** —
 
 | 细分方向 | 可行性 | 结论 |
 |:--------|:-----:|:-----|
-| **[规格1]**（[key params]） | ✅ **可以做** | [净利率]，[reasoning] |
+| **[规格1]**（[key params]） | ✅ **可以做** | [净利率≥28%]，[reasoning] |
 | **[规格2]**（[key params]） | ❌ **不建议** | [reasoning] |
 | **[规格3]**（[key params]） | ❌ **不建议** | [reasoning] |
 
 **核心结论：** [2-3句话总结判断，指出唯一可行的细分方向及原因]
 
-**切入点建议：** [具体规格、定价、首批数量建议]
+**切入点建议：** [具体规格、定价（≥$50）、首批数量建议]
 ```
 
 ### 5. Closing
@@ -117,8 +117,8 @@ End with proactive follow-up:
 - **Chinese seller presence**: Have Chinese brands already succeeded? (validates feasibility)
 
 ### Go/No-Go Decision Framework
-- **GO** if: net margin > 8%, monthly sales potential > 200 units, clear differentiation path
-- **CONDITIONAL GO** if: net margin 3-8% but high volume potential or strategic value
-- **NO-GO** if: net margin < 3%, market dominated by entrenched brands, no differentiation possible
+- **GO** if: net margin ≥ 28%, price ≥ $50, monthly sales potential > 200 units, FBM-friendly, clear differentiation path
+- **CONDITIONAL GO** if: net margin 20-28% with a clear cost-optimization path to reach ≥ 28%
+- **NO-GO** if: net margin < 20%, or price < $50, market dominated by entrenched brands, no differentiation possible
 
 Always provide the decision in a clear table format with explicit ✅/❌ markers.
