@@ -21,12 +21,14 @@ Invoke this skill when the user:
 ## Core Principles
 
 1. **Amazon US market focus** — all analysis targets Amazon.com (US station)
-2. **FBM priority** — large/heavy items favor FBM due to high FBA fees; flag FBM suitability for every recommendation
-3. **1688 sourcing** — all cost estimates use 1688 wholesale prices as baseline
-4. **Blue ocean selection** — target products with monthly sales 100-800 (NOT 1000+ hot sellers); avoid red ocean categories where top ASINs have 1000+ reviews
-5. **Fast launch signal** — prioritize categories where new ASINs (30 days) can get first orders quickly; look for low review barriers (top 10 avg <200 reviews) and low PPC competition
-6. **Data-driven decisions** — every recommendation must include: price, sourcing cost, monthly sales, profit margin, weight, competition assessment, new ASIN launch feasibility
-7. **Clear go/no-go** — category analysis must end with an explicit "can do / cannot do" verdict with reasoning
+2. **FBM priority** — prefer FBM-friendly products (large/heavy items where high FBA fees create a natural moat); flag FBM suitability for every recommendation and rank FBM-friendly items higher
+3. **Margin threshold 28%** — only select products with estimated net margin ≥ 28%; products below 28% are auto-excluded
+4. **Price floor $50** — only select products priced at $50 or above; sub-$50 products are auto-excluded regardless of margin
+5. **1688 sourcing** — all cost estimates use 1688 wholesale prices as baseline
+6. **Blue ocean selection** — target products with monthly sales 100-800 (NOT 1000+ hot sellers); avoid red ocean categories where top ASINs have 1000+ reviews
+7. **Fast launch signal** — prioritize categories where new ASINs (30 days) can get first orders quickly; look for low review barriers (top 10 avg <200 reviews) and low PPC competition
+8. **Data-driven decisions** — every recommendation must include: price, sourcing cost, monthly sales, profit margin, weight, competition assessment, new ASIN launch feasibility
+9. **Clear go/no-go** — category analysis must end with an explicit "can do / cannot do" verdict with reasoning
 
 ## Output Format Standards
 
@@ -80,11 +82,11 @@ All profit calculations must include these 8 cost items:
 Net Profit = Sale Price - Amazon Commission (15%) - Advertising (10%) - Product Cost (CNY→USD) - Freight+Tariff (CNY→USD) - Warehouse Handling (CNY→USD) - FBM Shipping
 ```
 
-**Decision thresholds:**
-- Net margin > 15%: Strong recommendation
-- Net margin 8-15%: Feasible, volume play
-- Net margin 3-8%: Thin margin, only if high volume potential
-- Net margin < 3%: Not recommended
+**Decision thresholds (margin floor: 28%; price floor: $50):**
+- Net margin ≥ 28%: ✅ passed filters, recommend
+- Net margin 20-28%: ⚠️ marginal, only if cost optimization can reach 28%
+- Net margin < 20%: ❌ auto-excluded, do not recommend
+- Price < $50: ❌ auto-excluded regardless of margin
 
 ## Key Data Sources
 
