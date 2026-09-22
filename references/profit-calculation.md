@@ -8,7 +8,7 @@
 ## Input Requirements
 Gather from user (or make reasonable estimates):
 1. **Product name and specification** — what exactly is being sold
-2. **Sale price** — target selling price on Amazon
+2. **Sale price** — target selling price on Amazon (must be ≥ $50 per selection rules)
 3. **1688 sourcing price** — wholesale cost per unit (in CNY)
 4. **Product weight** — for shipping calculation
 5. **Product dimensions/CBM** — for freight calculation
@@ -69,7 +69,7 @@ Net Margin = Net Profit / Revenue × 100%
 | 海外仓操作 | -¥[CNY] ≈ -$[USD] |
 | FBM尾程 | -$[amount] |
 | **单台净利润** | **≈ $[amount]** |
-| **净利率** | **≈ [percentage]%** |
+| **净利率** | **≈ [percentage]%**（需≥28%） |
 ```
 
 ## Multi-Scenario Analysis
@@ -87,12 +87,15 @@ When a product has multiple specifications (e.g., different sizes, weights, mate
 
 ## Decision Thresholds
 
+**选品硬性门槛：售价 ≥ $50，净利率 ≥ 28%。**
+
 | Net Margin | Recommendation | Strategy |
 |:----------|:--------------|:---------|
-| > 15% | Strong recommendation | Premium positioning, invest in branding |
-| 8-15% | Feasible | Standard approach, optimize costs |
-| 3-8% | Thin margin | Only if high volume potential, cost optimization critical |
-| < 3% | Not recommended | Explore alternative specs or abandon |
+| ≥ 28% | ✅ 达标，推荐 | 符合毛利门槛，可推进 |
+| 20-28% | ⚠️ 边缘 | 需成本优化至 28% 方可推荐 |
+| < 20% | ❌ 不推荐 | 低于毛利门槛，排除 |
+
+**Note:** Price floor $50 — products priced below $50 are auto-excluded before margin calculation.
 
 ## FBM vs FBA Comparison
 
