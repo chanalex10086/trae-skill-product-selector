@@ -27,10 +27,10 @@ Generate **3-5 product recommendations** in ranked order (🥇 🥈 🥉 🌟).
 
 | 关键指标 | 数据 |
 |:--------|:----|
-| 💰 售价 | $[价格范围] |
+| 💰 售价 | $[价格范围]（≥$50） |
 | 📦 1688拿货价 | ¥[价格范围] |
 | 📊 月销参考 | [头部ASIN月销量] |
-| 💵 单件毛利 | $[利润范围] |
+| 💵 单件毛利 | $[利润范围]（净利率≥28%） |
 | ⚖️ 重量 | [重量范围]，[FBM/FBA友好度] |
 | 🏆 竞争判断 | ⭐⭐⭐ [竞争程度描述] |
 
@@ -69,16 +69,17 @@ Prioritize products that meet ALL of these criteria:
 1. **Monthly sales sweet spot**: Top ASIN monthly sales 100-800 (NOT 1000+). If top ASIN >1000/month, the category is likely too competitive for a new entrant to get quick traction.
 2. **Low review barrier**: Top 10 ASINs average <200 reviews. If average >500 reviews, new listings will struggle to rank.
 3. **Fast launch signal**: Evidence that new ASINs (30 days old) in this category are already getting orders. Look for ASINs with <50 reviews but appearing in top 20 results.
-4. **FBM friendly**: Weight 8-30kg or large volume (FBA fees create natural moat)
+4. **FBM friendly (preferred)**: Weight 8-30kg or large volume (FBA fees create natural moat); FBM-friendly items rank higher
 5. **1688 sourcable**: Clear supply chain on 1688 with MOQ 50-200 units
-6. **Healthy margin**: $30+ net profit per unit, net margin >15%
+6. **Healthy margin**: net margin ≥ 28% (hard threshold, 毛利门槛)
+7. **Price floor $50**: selling price must be ≥ $50; sub-$50 products are auto-excluded
 
 ### Preferred Signals (nice to have)
-7. **Low PPC cost**: Estimated CPC < $1.50 (less competition = cheaper ads = faster to first sale)
-8. **Brand fragmentation**: No single brand >30% market share (TOP3 click share <25%)
-9. **Price range**: $50-200 (broad enough for margin, narrow enough to avoid premium brand wars)
-10. **Differentiation potential**: Clear improvement opportunities visible in top competitor差评
-11. **Seasonal timing**: Product should NOT be in declining season; ideally entering or in stable season
+8. **Low PPC cost**: Estimated CPC < $1.50 (less competition = cheaper ads = faster to first sale)
+9. **Brand fragmentation**: No single brand >30% market share (TOP3 click share <25%)
+10. **Price range**: $50-200 ($50 as hard floor, premium cap to avoid brand wars)
+11. **Differentiation potential**: Clear improvement opportunities visible in top competitor差评
+12. **Seasonal timing**: Product should NOT be in declining season; ideally entering or in stable season
 
 ### Red Flags (auto-reject)
 - Top ASIN monthly sales >2000 (red ocean, too competitive)
@@ -86,6 +87,8 @@ Prioritize products that meet ALL of these criteria:
 - Single brand >40% click share (monopoly, hard to break in)
 - ABA search rank <500 (too much search competition)
 - Category dominated by Amazon Basics or major brands (Apple, Philips, etc.)
+- Selling price < $50 (violates $50 price floor)
+- Estimated net margin < 28% (violates 28% margin floor)
 
 ### New ASIN Launch Feasibility Assessment
 For each recommendation, assess the likelihood of a new ASIN getting its first order within 30 days:
@@ -127,6 +130,7 @@ Based on cross-border e-commerce patterns, these categories tend to have blue oc
 4. Check if top 10 avg reviews <200 (low barrier)
 5. Check if any ASIN with <50 reviews appears in top 20 (fast launch signal)
 6. Verify 1688 sourcing availability
-7. Calculate profit margin
+7. Calculate profit margin (must be ≥28%)
+8. Confirm selling price ≥ $50
 
 Always tailor recommendations to the user's specific supply chain and preferences.
